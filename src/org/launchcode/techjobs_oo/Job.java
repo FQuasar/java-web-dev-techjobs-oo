@@ -45,6 +45,46 @@ public class Job {
         return Objects.hash(id);
     }
 
+    @Override
+    public String toString() {
+        String jobName;
+        String jobEmployer;
+        String jobLocation;
+        String jobPosition;
+        String jobCoreCompetency;
+
+        // if job field is blank
+        // set variable to equal "Data not available"
+        // else set varriable to equal this.field.toString()
+
+        if (this.name.equals("")){
+            jobName="Data not available";
+        } else { jobName = this.name;}
+
+        if (this.employer.toString().equals("")){
+            jobEmployer="Data not available";
+        } else { jobEmployer = this.employer.toString();}
+
+        if (this.location.toString().equals("")){
+            jobLocation="Data not available";
+        } else { jobLocation = this.location.toString();}
+
+        if (this.positionType.toString().equals("")){
+            jobPosition="Data not available";
+        } else { jobPosition = this.positionType.toString();}
+
+        if (this.coreCompetency.toString().equals("")){
+            jobCoreCompetency="Data not available";
+        } else { jobCoreCompetency = this.coreCompetency.toString();}
+
+        return "\n"+ "ID: "+ this.getId() +
+                "\n"+"Name: " + jobName +
+                "\n"+"Employer: " + jobEmployer +
+                "\n"+"Location: " + jobLocation +
+                "\n"+"Position Type: " + jobPosition +
+                "\n"+"Core Competency: " + jobCoreCompetency + "\n";
+    }
+
 
     // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
     //  and id.
@@ -92,4 +132,6 @@ public class Job {
     public void setCoreCompetency(CoreCompetency coreCompetency) {
         this.coreCompetency = coreCompetency;
     }
+
+
 }
