@@ -20,7 +20,7 @@ public class JobTest {
     }
     @Test
     public void testSettingJobId(){
-      assertEquals(1,testJobY.getId() - testJobX.getId(),.01);
+      assertEquals(1,testJobY.getId() - testJobX.getId());
     }
 
     @Test
@@ -92,17 +92,15 @@ public class JobTest {
         testJobX = new Job(jobNameValue, testEmployerValue, testLocationValue, testPositionValue, testCoreCompetencyValue);
         //   "Data not available";
 
-         String expectedJobX = "\n"+ "ID: 4"+
+         String expectedJobX = "\n"+ "ID: "+ testJobX.getId() +
                 "\n"+"Name: Product test" +
                 "\n"+"Employer: Data not available" +
                 "\n"+"Location: Desert" +
                 "\n"+"Position Type: Quality control" +
                 "\n"+"Core Competency: Persistence" + "\n";
 
-
-
        assertEquals(expectedJobX,testJobX.toString());
-       // System.out.println(testJobX);
+       //System.out.println(testJobX);
     }
 
 }
